@@ -16,7 +16,9 @@ Note: You may hear the term "Data Modeling" in place of "Data Engineering," but 
 
 #### Data Modeling
 
-Inspect the CSVs and sketch out an ERD of the tables. Feel free to use a tool like [http://www.quickdatabasediagrams.com](http://www.quickdatabasediagrams.com).
+Inspect the CSVs and sketch out an ERD of the tables. Quick diagrams tool was used to create a data model [http://www.quickdatabasediagrams.com](http://www.quickdatabasediagrams.com).
+
+![erd.png](images/erd.png)
 
 #### Data Engineering
 
