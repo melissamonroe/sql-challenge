@@ -1,5 +1,5 @@
 -- 1. List the following details of each employee: employee number, last name, first name, sex, and salary.
-select 	first_name,	last_name,sex, s.salary from employees e inner join salaries s on e.emp_no = s.emp_no;
+select e.emp_no, first_name, last_name,sex, s.salary from employees e inner join salaries s on e.emp_no = s.emp_no;
 
 select count(*) from employees;
 --300,024
@@ -26,6 +26,7 @@ select first_name, last_name, sex from employees where first_name = 'Hercules' a
 select emp_no, last_name, first_name,employee_val(emp_no,'namedept') as MaxDeptName from employees where emp_no in (select emp_no from dept_emp where dept_no in (select dept_no from departments where dept_name = 'Sales'))
 select count(*) from employees where emp_no in (select emp_no from dept_emp where dept_no in (select dept_no from departments where dept_name = 'Sales'))
 -- 52245
+--Note: employees belonging to multiple departments (Sales and another department) will display the max (in random order) department name
 
 --employees only in sales department
 select emp_no, last_name, first_name,employee_val(emp_no,'namedept') from employees where employee_val(emp_no,'namedept') = 'Sales'
@@ -33,7 +34,15 @@ select count(*) from employees where employee_val(emp_no,'namedept') = 'Sales'
 --47730
 
 -- 7. List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
+--using sql expresssion (less efficent)
 select emp_no, last_name, first_name,employee_val(emp_no,'namedept') from employees where employee_val(emp_no,'namedept') in ('Sales','Development')
+select count(*) from employees where employee_val(emp_no,'namedept') in ('Sales','Development')
+--129023 (only sales and development and no other department)
+--using joins
+select emp_no, last_name, first_name,employee_val(emp_no,'namedept') from employees where emp_no in (select emp_no from dept_emp where dept_no in (select dept_no from departments where dept_name in ('Sales','Development')))
+select count(*) from employees where emp_no in (select emp_no from dept_emp where dept_no in (select dept_no from departments where dept_name in ('Sales','Development')))
+--137952 (employees in sales or development including employees that belong to other departments in addition to sales and development)
+
 
 -- 8. In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
 SELECT COUNT(*), last_name FROM employees GROUP BY last_name HAVING COUNT(*) > 1 order by count(*) desc
