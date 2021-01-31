@@ -37,3 +37,10 @@ select emp_no, last_name, first_name,employee_val(emp_no,'namedept') from employ
 
 -- 8. In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
 SELECT COUNT(*), last_name FROM employees GROUP BY last_name HAVING COUNT(*) > 1 order by count(*) desc
+
+
+select * from employees e 
+	left join salaries s on e.emp_no = s.emp_no 
+	left join titles t on e.emp_title_id = t.title_id
+	where e.emp_no = 499942
+	
