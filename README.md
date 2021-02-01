@@ -118,7 +118,7 @@ Evidence in hand, you march into your boss's office and present the visualizatio
 
 * `.sql` file of table schemas. [employee-schema.sql](EmployeeSQL/employee-schema.sql) [employee_val_function.sql](EmployeeSQL/employee_val_function.sql)
 
-* `.sql` file of your queries and create function. [queries.sql](EmployeeSQL/queries.sql)
+* `.sql` file of your queries and create function. [queries.sql](EmployeeSQL/queries.sql) [employee_val_function.sql](EmployeeSQL/employee_val_function.sql)
 
 * Jupyter Notebook of the bonus analysis. [employeePy.ipynb](EmployeeSQL/employeePy.ipynb)
 
