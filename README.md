@@ -6,13 +6,7 @@
 
 It is a beautiful spring day, and it is two weeks since you have been hired as a new data engineer at Pewlett Hackard. Your first major task is a research project on employees of the corporation from the 1980s and 1990s. All that remain of the database of employees from that period are six CSV files.
 
-In this challenge, you will design the tables to hold data in the CSVs, import the CSVs into a SQL database, and answer questions about the data. In other words, you will perform:
-
-1. Data Engineering
-
-3. Data Analysis
-
-Note: You may hear the term "Data Modeling" in place of "Data Engineering," but they are the same terms. Data Engineering is the more modern wording instead of Data Modeling.
+In this challenge, tables were designed hold data containted in the CSVs. The data was imported into a SQL database. Data engineering and analysis were performed in order to create the data schemas and answer the questions in the sections below.
 
 #### Data Modeling
 
@@ -22,11 +16,11 @@ CSV files were inspected and quick diagrams tool was used to sketch out an ERD o
 
 #### Data Engineering
 
-* Table schemas were have been created for each of the six CSV files. Data types, primary keys, foreign keys, and other constraints are specified.
+* Table schemas have been created for each of the six CSV files. Data types, primary keys, foreign keys, and other constraints are specified.
 
 #### Data Analysis
 
-Once the database schema was created and the data was imported, SQL queries were used to return the following information:
+Once the database schemas were created and the data was imported, SQL queries were used to return the following information:
 
 1. List the following details of each employee: employee number, last name, first name, sex, and salary.
 
@@ -94,15 +88,19 @@ As you examine the data, you are overcome with a creeping suspicion that the dat
 
 * [SQLAlchemy documentation](https://docs.sqlalchemy.org/en/latest/core/engines.html#postgresql) was used for reference.
 
-* Username and password were imported from a config file and supressed from githup upload using gitignore. See [https://www.youtube.com/watch?v=2uaTPmNvH0I](https://www.youtube.com/watch?v=2uaTPmNvH0I) and [https://help.github.com/en/github/using-git/ignoring-files](https://help.github.com/en/github/using-git/ignoring-files) for more information.
+* PostGreSQL username and password were imported from a config file and supressed from githup upload using gitignore. See [https://www.youtube.com/watch?v=2uaTPmNvH0I](https://www.youtube.com/watch?v=2uaTPmNvH0I) and [https://help.github.com/en/github/using-git/ignoring-files](https://help.github.com/en/github/using-git/ignoring-files) for more information.
 
-2. Create a histogram to visualize the most common salary ranges for employees.
+2. Histogram was created to visualize the most common salary ranges for employees.
 
 ![Salary Distribution](images/figure1_salarydist.png)
 
-3. Create a bar chart of average salary by title.
+3. Horizontal bar chart was created to visualize the average salary by title.
 
 ![Average Salary by Title](images/figure2_meansalarybytitle.png)
+
+![Average Salary by Title dataframe](images/figure3_meansalarytitle_df.png)
+
+Visualization and analysis of the salary data by title reveals the fact that the senior employee salaries are nearly the same as the junior and lower level employee salaries, pointing to the conclusion that the data sample is not based on real data.
 
 ## Epilogue
 
@@ -114,17 +112,14 @@ Evidence in hand, you march into your boss's office and present the visualizatio
 	where e.emp_no = 499942 
   returns name: April Foolsday!`
 
-## Submission
+## Summary information
 
-* Create an image file of your ERD.
+* Image file of ERD.
 
-* Create a `.sql` file of your table schemata.
+* `.sql` file of table schemas. [employee-schema.sql](EmployeeSQL/employee-schema.sql) [employee_val_function.sql](EmployeeSQL/employee_val_function.sql)
 
-* Create a `.sql` file of your queries.
+* `.sql` file of your queries and create function. [queries.sql](EmployeeSQL/queries.sql)
 
-* (Optional) Create a Jupyter Notebook of the bonus analysis.
+* Jupyter Notebook of the bonus analysis. [employeePy.ipynb](EmployeeSQL/employeePy.ipynb)
 
-* Create and upload a repository with the above files to GitHub and post a link on BootCamp Spot.
-
-* Ensure your repository has regular commits (i.e. 20+ commits) and a thorough README.md file
-
+* Thorough readme.md
